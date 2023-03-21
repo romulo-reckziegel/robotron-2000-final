@@ -35,6 +35,9 @@ const pecas = {
     }
 }
 
+const imgRobo = document.querySelector(".robo")
+const colors = ['Amarelo', 'Branco', 'Preto', 'Rosa', 'Vermelho', 'Azul']
+
 controle.forEach(element => {
     element.addEventListener("click", (evento) => {
         calc(evento.target.dataset.controle, evento.target.parentNode)
@@ -61,3 +64,15 @@ function statsCalc (peca) {
     })
 
 }
+
+let i = 0
+imgRobo.addEventListener("click", () => {
+    if (i<colors.length) {
+        imgRobo.src = "img/" + colors[i] + ".png"
+        i++
+    }
+    else {
+        i = 0
+        imgRobo.src = "img/" + colors[i] + ".png"
+    }
+})
